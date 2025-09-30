@@ -2,7 +2,9 @@ package com.example.tp3.models;
 
 import androidx.annotation.Nullable;
 
-public class Producto implements Comparable<Producto> {
+import java.io.Serializable;
+
+public class Producto implements Comparable<Producto>, Serializable {
     private String codigo;
     private String descripcion;
     private double precio;
@@ -12,6 +14,8 @@ public class Producto implements Comparable<Producto> {
         this.descripcion = descripcion;
         this.precio = precio;
     }
+
+    public Producto(){};
 
     public String getCodigo() {
         return codigo;

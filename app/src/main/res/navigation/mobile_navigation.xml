@@ -20,5 +20,15 @@
         android:name="com.example.tp3.ui.salir.SalirFragment"
         android:label="fragment_salir"
         tools:layout="@layout/fragment_salir" />
+    <fragment
+        android:id="@+id/nav_eliminar_producto"
+        android:name="com.example.tp3.ui.eliminarproducto.EliminarProductoFragment"
+        android:label="fragment_eliminar_producto"
+        tools:layout="@layout/fragment_eliminar_producto" />
+    <fragment
+        android:id="@+id/confirmarEliminarFragment"
+        android:name="com.example.tp3.ui.eliminarproducto.ConfirmarEliminarFragment"
+        android:label="fragment_confirmar_eliminar"
+        tools:layout="@layout/fragment_confirmar_eliminar" />
 
 </navigation>

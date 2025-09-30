@@ -18,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.tp3.databinding.ActivityMainBinding;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,12 +26,18 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
 
-    public static List<Producto> listaProductos = new ArrayList<>();
+    public static List<Producto> listaProductos = new ArrayList<>(
+            Arrays.asList(
+                    new Producto("aaa", "Fideos", 1200)
+            )
+    );
 
     public static void agregarProducto(Producto p) {
         listaProductos.add(p);
     }
-
+    public static  void eliminarProducto(Producto p) {
+        listaProductos.remove(p);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_agregar_producto, R.id.nav_salir)
+                R.id.nav_home, R.id.nav_agregar_producto, R.id.nav_salir, R.id.nav_eliminar_producto)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
