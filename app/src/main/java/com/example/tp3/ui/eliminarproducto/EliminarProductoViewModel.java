@@ -46,13 +46,16 @@ public class EliminarProductoViewModel extends AndroidViewModel {
                 Log.d("encontrado","producto encontrado " + p.getDescripcion());
                 mProducto.setValue(p);
             }
-        }
 
+        }
+        mMensaje.setValue("El producto no se encontro");
         return null;
     }
 
     public void limpiarPorducto(){
+
         mProducto.setValue(null);
+        mMensaje.setValue("");
     }
 
 

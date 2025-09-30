@@ -40,6 +40,13 @@ public class EliminarProductoFragment extends Fragment {
             viewModel.buscarProductoPorCodigo(codigo);
         });
 
+        viewModel.getMensaje().observe(getViewLifecycleOwner(), mensaje -> {
+                binding.tvMensaje.setText(mensaje);
+                binding.tvMensaje.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+
+                binding.etCodigo.setText("");
+        });
+
         viewModel.getProducto().observe(getViewLifecycleOwner(), producto -> {
                 if (producto != null) {
                     Bundle bundle = new Bundle();
@@ -48,9 +55,6 @@ public class EliminarProductoFragment extends Fragment {
                     viewModel.limpiarPorducto();
                 }
         });
-
-
-
 
         return root;
     }
